@@ -4,3 +4,136 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: azure;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    font-size: 1.6em;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: blue;
+    color: white;
+    justify-content: space-between;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header div img {
+    width: 50px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+header input[type="search"] {
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 16px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    background-color: white;
+}
+
+/* Declaração Flex 1 (nav) + 4 (section) = traduz 20% de largura de nav + 80% de conteúdo*/
+
+nav {
+    flex: 1;
+    padding: 8px;
+    border-right: 2px solid #ccc;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    margin-bottom: 16px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 8px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: blue;
+    color: white;   
+}
+
+section {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+article {
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 16px auto;
+    padding: 8px;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-container img {
+    width: 100px;
+    margin: 0 auto;
+}
+
+.login-container h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+input[type="email"],
+input[type="password"] {
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+input[type="submit"] {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+}
