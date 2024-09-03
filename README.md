@@ -1,5 +1,10 @@
 # construcao-de-frontend
 
+================ Extensões que o professor usa ==================
+
+vsCode-Icons
+Pretty Formatter
+
 ================= Instalação do React:  ===================
 
 cd aulas
@@ -15,4 +20,4 @@ npm run dev (disponibiliza a aplicação, quer roda na pasta src)
 (Ctrl+C  para encerrar a aplicação)
 
 npm run build (gera o pacote da aplicação)
-npm run preview   (gera um preview, que orda na pasta dist)
+npm run preview   (gera um preview, que roda na pasta dist)
