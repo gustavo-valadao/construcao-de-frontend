@@ -17,7 +17,11 @@ cd aula03
 npm install
 npm run dev (disponibiliza a aplicação, quer roda na pasta src)
 
+
+
 (Ctrl+C  para encerrar a aplicação)
 
 npm run build (gera o pacote da aplicação)
 npm run preview   (gera um preview, que roda na pasta dist)
+
+Backend: comando "npx json-server db.json" (para disponibiliza o servidor backend para rodar)
