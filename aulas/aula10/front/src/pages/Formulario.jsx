@@ -8,7 +8,8 @@ function Formulario (props) {
         register, 
         handleSubmit, 
         formState: {errors}
-    } = useForm();
+    } = useForm({values: props.dados});  //Values permite que o formulario receba os dados como props. 
+                                         //Em novo contato, dados é vazio. Ao editar contato, recupera o dado do contato.
 
     return (
         <>

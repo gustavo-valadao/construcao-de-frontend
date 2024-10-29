@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Cabecalho from "../components/Cabecalho";
 import Conteudo from "../components/Conteudo";
 import { buscarTodos, remover } from "../services/ContatoService";
@@ -6,6 +7,7 @@ import Listagem from "./Listagem";
 
 function Listar () {
 
+    const navigate = useNavigate();
     const [contatos, setContatos] = useState([]);  //Estado para armazenar os contatos listados
     const [erro, setErro] = useState();            //Estado para armazenar a mensagem de erro, se não conseguir trazer os contatos listados
 
@@ -19,6 +21,10 @@ function Listar () {
             setContatos([]);
             setErro(resultado.mensagem);
         }
+    }
+
+    const onEditar = (id) => {
+        navigate(`/editar/${id}`)
     }
 
     const onRemover = async (id) => {
@@ -40,7 +46,7 @@ function Listar () {
             <Conteudo>
                 {erro && <p>{erro}</p>}
                 <h2>Lista de Contatos</h2>
-                <Listagem itens={contatos} onRemover={onRemover}/>
+                <Listagem itens={contatos} onEditar={onEditar} onRemover={onRemover}/>
             </Conteudo>
         </>
     );

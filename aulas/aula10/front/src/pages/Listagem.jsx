@@ -15,7 +15,7 @@ function Listagem(props) {
                         <span>{item.nome}</span>
                         <span>{item.telefone}</span>
                         <span>
-                            <button>Editar</button>
+                            <button onClick={() => props.onEditar(item.id)}>Editar</button>
                             <button onClick={() => props.onRemover(item.id)}>Remover</button>
                         </span>
                     </li>
