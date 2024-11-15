@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { autenticar, cadastrar } from "../services/AuthService"
 
 const AuthContext = createContext();
 
@@ -12,16 +13,17 @@ function AuthProvider(props) {
 
 
 
-    const login = (dados) => {
-        if (dados.email === "jose@iesb.br" && dados.senha === "abcd1234") {
+    const login = async (dados) => {
+        const resposta = await autenticar(dados);
+        if (resposta.sucesso) {
             setUsuario({
-                email: dados.email, 
+                email: resposta.dados.user.email, 
                 logado: true, 
-                token: "1a2b3c4d"
+                token: resposta.dados.acessToken,
             });
             return ""
         } else {
-            return "Login inválido"
+            return resposta.mensagem
         }
     }
 
@@ -33,12 +35,20 @@ function AuthProvider(props) {
         })
     }
 
-    const registrar = (dados) => {
-        setUsuario ({
-            email: dados.email, 
-            logado: true, 
-            token: "1a2b3c4d"
-        })
+    const registrar = async (dados) => {
+        
+        const resposta = await cadastrar(dados);
+
+        if(resposta. sucesso) {
+            setUsuario ({
+                email: resposta.dados.user.email, 
+                logado: true, 
+                token: resposta.dados.acessToken,
+            })
+            return "";
+        } else {
+            return resposta.mensagem;
+        }
     }
     
     const context = { usuario, login, logout, registrar };

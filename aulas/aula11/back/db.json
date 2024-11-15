@@ -1,5 +1,9 @@
 {
-    "users": [
-        
-    ]
+  "users": [
+    {
+      "email": "123@123.com",
+      "password": "$2a$10$2pA/rdrSJCJ6c4r19S2.tuW2mb1c..sik54IGdoQC8f00FQW0q8Oe",
+      "id": 1
+    }
+  ]
 }
